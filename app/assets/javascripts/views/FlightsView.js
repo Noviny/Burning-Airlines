@@ -1,9 +1,11 @@
 var app = app || {};
 
-app.FlightsView = Backbone.View.extend({
-  el: '#main',
-
+app.FlightView = Backbone.View.extend({
+  el: 'main',
+  events: {
+    'click #create': 'createFlight',
+  },
   render: function () {
-    console.log("where you see details of flights you have booked")
+
   }
-})
+});

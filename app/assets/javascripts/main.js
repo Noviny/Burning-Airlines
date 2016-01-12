@@ -8,9 +8,6 @@ _.templateSettings = {
 
 var app = app || {};
 
-
-
-
 $(document).ready(function () {
   // app.airlines = new app.Secrets();
   // app.airlines.fetch()

@@ -6,6 +6,10 @@ app.Airplanes = Backbone.Collection.extend({
   url: "/airplanes",
 
   initialize: function () {
-    //Run text on initialize goes here
+    this.on('add', function (airplane) {
+      console.log("New Airplane added");
+      var airplaneView = new AirplanesView({model: airplane});
+      airplaneView.render();
+    });
   }
 })
