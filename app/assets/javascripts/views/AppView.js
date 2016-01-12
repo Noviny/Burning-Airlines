@@ -4,6 +4,6 @@ app.AppView = Backbone.View.extend({
   el: '#main',
 
   render: function () {
-    console.log('index rendered')
+    this.$el.html( 'CHECKING FOR THINGS' )
   }
 })
