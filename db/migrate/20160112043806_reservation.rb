@@ -3,5 +3,6 @@ class Reservation < ActiveRecord::Migration
     create_table :reservations do |t|
       t.integer :flight_id
       t.integer :user_id
+    end
   end
 end
