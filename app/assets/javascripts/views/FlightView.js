@@ -2,9 +2,12 @@ var app = app || {};
 
 
 app.FlightView = Backbone.View.extend({
-  el: '#main',
+  tagName: "li",
 
   render: function () {
-    console.log("Details of a single flight")
+    console.log("rendered")
+    var content = this.model.get("content");
+    this.$el.text( content );
+    this.$el.prependTo("#flights")
   }
 })

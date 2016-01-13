@@ -3,14 +3,20 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @airplane.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:rows) %>:</strong></dt>
-  <dd><%= @airplane.rows %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:columns) %>:</strong></dt>
-  <dd><%= @airplane.columns %></dd>
-</dl>
+<div class="dl-horizontal">
+  <strong><%= model_class.human_attribute_name(:name) %>:</strong>
+  <%= @airplane.name %>
+  <p><strong>Seat: </strong></p>
+  <% i = 0 %>
+  <% (1..@airplane.rows).each do |row| %>
+    <div class="row">
+      <% (1..@airplane.columns).each do |column| %>
+     <div class="col-sm-2">Seat <%= i = i + 1%></div>
+    <% end %>
+   </div>
+  <% end %>
+  <br><br>
+</div>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               airplanes_path, :class => 'btn btn-default'  %>
