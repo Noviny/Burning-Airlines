@@ -4,9 +4,9 @@ app.Flight = Backbone.Model.extend({
   urlRoot: "/flights",
 
   defaults: {
-    flight_no: "",
-    origin: "",
-    destination: "",
-    date: ""
+    flight_no: "blank",
+    origin: "blank",
+    destination: "blank",
+    date: "blank"
   }
 })
