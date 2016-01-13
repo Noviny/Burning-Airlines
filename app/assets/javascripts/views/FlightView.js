@@ -3,10 +3,26 @@ var app = app || {};
 app.FlightView = Backbone.View.extend({
   el: '#main',
   events: {
-    'click td': 'bookSeat'
+    'click td': 'bookSeat',
+    'click .save': 'confirmBooking'
   },
   bookSeat: function (e) {
-    console.log(e.target);
+    if ($(e.target).hasClass('seat-booked')) {
+      alert("This seat has been reserved.")
+    } else {
+      $('.seat-selected').removeClass('seat-selected');   //Avoid multiple selection
+      $(e.target).addClass('seat-selected');
+    }
+    console.log($(e.target).text());
+    $('#seatNumber').val($(e.target).text());
+  },
+  confirmBooking: function () {
+    var flightId = this.model.get("id");
+    // var userId =                       //*** Remember add current user id
+    var seatNum = $('#seatNumber').val();
+    var reservation = new app.Reservation();
+    reservation.set({ flight_id: flightId, seat: seatNum});   //*** Remember add current user id
+    reservation.save();
   },
   render: function () {
     var rows = this.model.get("rows");
@@ -22,7 +38,6 @@ app.FlightView = Backbone.View.extend({
             }
           table += '</tr>'
       }
-
 
     var flightsViewTemplate = _.template($('#flightViewTemplate').html());
     this.$el.html(flightsViewTemplate(this.model.toJSON()));
