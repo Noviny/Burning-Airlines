@@ -14,16 +14,16 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.destroy_all
-u1 = User.create :name => 'Admin', :email => 'admin@gmail.com', :password => 'chicken', :password_confirmation => 'chicken', :admin => true
-u2 = User.create :name => 'Kiah', :email => 'kiah@gmail.com', :password => 'chicken', :password_confirmation => 'chicken', :admin => false
-u3 = User.create :name => 'Angie', :email => 'angie@gmail.com', :password => 'chicken', :password_confirmation => 'chicken', :admin => false
-u4 = User.create :name => 'Ben', :email => 'ben@gmail.com', :password => 'chicken', :password_confirmation => 'chicken', :admin => false
+u1 = User.create :name => 'Admin', :email => 'admin@gmail.com', :password => 'chicken'
+u2 = User.create :name => 'Kiah', :email => 'kiah@gmail.com', :password => 'chicken'
+u3 = User.create :name => 'Angie', :email => 'angie@gmail.com', :password => 'chicken'
+u4 = User.create :name => 'Ben', :email => 'ben@gmail.com', :password => 'chicken'
 
-Airplanes.destroy_all
-a1 = Airplanes.create :name => '747', :rows => 20, :columns => 6
-a2 = Airplanes.create :name => '756', :rows => 18, :columns => 8
-a3 = Airplanes.create :name => '777', :rows => 22, :columns => 6
-a4 = Airplanes.create :name => '380', :rows => 24, :columns => 5
+Airplane.destroy_all
+a1 = Airplane.create :name => '747', :rows => 20, :columns => 6
+a2 = Airplane.create :name => '756', :rows => 18, :columns => 8
+a3 = Airplane.create :name => '777', :rows => 22, :columns => 6
+a4 = Airplane.create :name => '380', :rows => 24, :columns => 5
 
 Flight.destroy_all
 f1 = Flight.create :flight_no => 'AA100', :origin => 'MEL', :destination => 'SYD', :date => '01/01/2016 17:00'

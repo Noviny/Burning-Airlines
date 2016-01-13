@@ -1,13 +1,13 @@
 var app = app || {};
 
 
-app.FlightView = Backbone.View.extend({
+app.FlightListView = Backbone.View.extend({
   tagName: "li",
 
   render: function () {
     console.log("rendered")
-    var content = this.model.get("content");
-    this.$el.text( content );
+    var name = this.model.get("flight_no");
+    this.$el.text( name );
     this.$el.prependTo("#flights")
   }
 })
