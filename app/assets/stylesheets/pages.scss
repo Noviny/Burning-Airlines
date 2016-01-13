@@ -31,5 +31,21 @@ background-color: rgba(0, 0, 0, 0.1);
 }
 
 .table-hover {
-  
+
+}
+
+#tbl {
+  text-align: center;
+}
+
+#tbl tr, #tbl td {
+  border: 1px solid #c1dce9;
+}
+
+td.seat-selected {
+  background-color: orange;
+}
+
+td.seat-booked {
+  background-color: maroon;
 }

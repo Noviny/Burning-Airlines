@@ -39,7 +39,7 @@ a3.flights << f3
 a4.flights << f4
 
 Reservation.destroy_all
-r1 = Reservation.create :user_id => u4.id, :flight_id => f1.id
-r2 = Reservation.create :user_id => u2.id, :flight_id => f2.id
-r3 = Reservation.create :user_id => u4.id, :flight_id => f2.id
+r1 = Reservation.create :user_id => u4.id, :flight_id => f1.id, :seat => 'A1'
+r2 = Reservation.create :user_id => u2.id, :flight_id => f2.id, :seat => 'B2'
+r3 = Reservation.create :user_id => u4.id, :flight_id => f2.id, :seat => 'C1'
 
