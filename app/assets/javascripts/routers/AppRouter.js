@@ -27,7 +27,6 @@ app.AppRouter = Backbone.Router.extend({
       // debugger;
       flight.set('rows', plane.get('rows'));
       flight.set('columns', plane.get('columns'));
-      console.log(flight.attributes);
       var flightView = new app.FlightView({model:flight});
       flightView.render();
     })
