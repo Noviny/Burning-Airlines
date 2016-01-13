@@ -4,14 +4,14 @@ var app = app || {};
 app.FlightListView = Backbone.View.extend({
   el: "#flightlist",
 
-  events: {
-    'click .flight_number': 'showFlight'
-  },
+  // events: {
+  //   'click .flight_number': 'showFlight'
+  // },
 
-  showFlight: function () {
-    console.log(this.model)
-    app.router.navigate('flights/' + this.model.get('id'), true);
-  },
+  // showFlight: function () {
+  //   console.log()
+  //   app.router.navigate('flights/' + this.model.get('id'), true);
+  // },
 
   render: function () {
     console.log("rendered")
