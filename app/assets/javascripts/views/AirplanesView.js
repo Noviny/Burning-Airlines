@@ -29,4 +29,9 @@ app.AirplanesView = Backbone.View.extend ({
   }
 });
 
+    // var airplaneViewTemplate = $('#airplaneViewTemplate').html();
+    // this.$el.html( airplaneViewTemplate );
+
+    // var newAirplaneViewTemplate = new app.AirplanesView();
+    // newAirplaneViewTemplate.render();
 
