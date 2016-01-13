@@ -1,4 +1,4 @@
-<h1>THE APP PAGE</h1>
+<h1>Virgin Airline</h1>
 
 
 
@@ -13,7 +13,33 @@
     <input type="radio" name="type" value="arrival">Travel To
   </form>
   <input type="text" placeholder="search flights">
-  <p>All Flights</p>
-  <ul id="flights"></ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Flight No.</th>
+        <th>Origin</th>
+        <th>Destination</th>
+        <th>Plane</th>
+      </tr>
+    </thead>
+    <tbody id="flightlist">
+    </tbody>
+  </table>
+</script>
+
+
+<script type="html/template" id="listFlightTemplate">
+  <tr>
+    <td>{{ date }}</td>
+    <td id="{{flight_no}}" class="flight_number"><a href="/#flights/{{id}}" >{{ flight_no }}</a></td>
+    <td>{{ origin }}</td>
+    <td>{{ destination }}</td>
+  </tr>
+</script>
+
+<script type="html/template" id="flightViewTemplate">
+  <p>{{ date }} &nbsp; {{flight_no}} &nbsp; {{ origin }} > {{ destination }}</p>
 </script>
 
