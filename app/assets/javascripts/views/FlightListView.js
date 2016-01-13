@@ -6,8 +6,8 @@ app.FlightView = Backbone.View.extend({
 
   render: function () {
     console.log("rendered")
-    var content = this.model.get("content");
-    this.$el.text( content );
+    var name = this.model.get("name");
+    this.$el.text( "placeholder" );
     this.$el.prependTo("#flights")
   }
 })
