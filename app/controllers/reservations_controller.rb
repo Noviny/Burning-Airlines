@@ -4,6 +4,7 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def index
+    params[:id]
     @reservations = Reservation.all
   end
 
