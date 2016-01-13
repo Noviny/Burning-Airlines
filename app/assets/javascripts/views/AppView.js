@@ -7,7 +7,7 @@ app.AppView = Backbone.View.extend({
 
 
 
-    var searchPageTemplate =$('#searchPageTemplate').html();
+    var searchPageTemplate = $('#searchPageTemplate').html();
     this.$el.html( searchPageTemplate );
 
   }

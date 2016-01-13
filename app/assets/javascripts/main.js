@@ -9,8 +9,14 @@ _.templateSettings = {
 var app = app || {};
 
 $(document).ready(function () {
-  // app.airlines = new app.Secrets();
-  // app.airlines.fetch()
+  app.airplanes = new app.Airplanes();
+  app.airplanes.fetch();
+
+  app.flights = new app.Flights();
+  app.flights.fetch(); 
+
+  // app.users = new app.Users();
+  // app.users.fetch(); 
 
   //Create an interval that fetches every so often
 
