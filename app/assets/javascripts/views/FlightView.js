@@ -34,7 +34,7 @@ app.FlightView = Backbone.View.extend({
       for(var i= 1; i<rows; i++){
           table += '<tr>';
             for (var j= 0; j<columns; j++){
-              table += '<td>' + i +colLabels[j] + '</td>';
+              table += '<td id='+i+colLabels[j]+'>' + i + colLabels[j] + '</td>';
             }
           table += '</tr>'
       }
@@ -42,5 +42,25 @@ app.FlightView = Backbone.View.extend({
     var flightsViewTemplate = _.template($('#flightViewTemplate').html());
     this.$el.html(flightsViewTemplate(this.model.toJSON()));
     this.$el.find('#tbl').html(table);
+
+    var view = this;
+    setInterval(function () {
+      view.fetchReservationData();
+    }, 1000);
+  },
+  fetchReservationData: function () {
+    app.reservation = new app.Reservations();
+    console.log("Reservation = ", app.reservation);
+    app.reservation.fetch().done( function (rdata){
+      for (var i = 0; i < rdata.length; i++) {
+      //  if (flight.get('id') == rdata.get('flight_id')) {
+          // $('td#'+i.get('seat')).addClass('seat-booked').html();
+      //  }
+        // console.log('flight id = ', flight.get('id'));
+         console.log('R data = ', rdata);
+
+      };
+    });
   }
 });
+
