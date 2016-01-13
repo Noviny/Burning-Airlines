@@ -34,5 +34,10 @@ app.AppRouter = Backbone.Router.extend({
 
   },
 
+  myFlightsView: function () {
+    view = new app.MyFlightsView();
+    view.render();
+  },
 
-})
+
+});
