@@ -1,11 +1,11 @@
 var app = app || {};
 
-app.Users = Backbone.Collection.extend({
-  model: app.User,
+// app.Users = Backbone.Collection.extend({
+//   model: app.User,
 
-  url "/users",
+//   url "/users",
 
-  initialize: function () {
+//   initialize: function () {
     
-  }
-});
+//   }
+// });

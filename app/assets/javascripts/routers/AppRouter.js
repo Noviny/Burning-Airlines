@@ -8,13 +8,11 @@ app.AppRouter = Backbone.Router.extend({
   },
 
   index: function () {
-    console.log('index page')
     var appView = new app.AppView();
     appView.render();
   },
 
   myFlights: function () {
-    console.log('view my flights page')
     var flightsView = new app.FlightsView();
     flightsView.render();
   },

@@ -23,7 +23,6 @@ app.AirplanesView = Backbone.View.extend ({
   },
 
   render: function () {
-    console.log("Airplane form ready");
     var newAirplaneViewTemplate = $('#newAirplaneViewTemplate').html();
     this.$el.html( newAirplaneViewTemplate );
   }
