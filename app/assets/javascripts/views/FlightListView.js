@@ -5,8 +5,6 @@ app.FlightListView = Backbone.View.extend({
 
 
   render: function () {
-    console.log("rendered")
-
     var FlightViewTemplater = _.template( $("#listFlightTemplate").html() );
     this.$el.prepend(FlightViewTemplater( this.model.toJSON() ) );
 
