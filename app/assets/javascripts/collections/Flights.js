@@ -6,6 +6,10 @@ app.Flights = Backbone.Collection.extend({
   url: "/flights",
 
   initialize: function () {
-    //Run on creating flight goes here
+    this.on('add', function (flight) {
+      console.log("New flight added");
+      var flightView = new FlightsView({model: flight});
+      flightView.render();
+    });
   }
 })

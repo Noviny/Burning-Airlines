@@ -5,11 +5,15 @@ app.AppView = Backbone.View.extend({
 
   render: function () {
 
-    var airplaneViewTemplate = $('#airplaneViewTemplate').html();
-    this.$el.html( airplaneViewTemplate );
+    // var airplaneViewTemplate = $('#airplaneViewTemplate').html();
+    // this.$el.html( airplaneViewTemplate );
 
-    var newAirplaneViewTemplate = new app.AirplanesView();
-    newAirplaneViewTemplate.render();
+    // var newAirplaneViewTemplate = new app.AirplanesView();
+    // newAirplaneViewTemplate.render();
+
+
+    var searchPageTemplate =$('#searchPageTemplate').html();
+    this.$el.html( searchPageTemplate );
 
   }
 });
