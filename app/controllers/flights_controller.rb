@@ -10,6 +10,7 @@ class FlightsController < ApplicationController
   # GET /flights/1
   # GET /flights/1.json
   def show
+     @user = User.find params[:id]
   end
 
   # GET /flights/new
