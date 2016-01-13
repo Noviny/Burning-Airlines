@@ -13,13 +13,16 @@ app.FlightView = Backbone.View.extend({
     var columns = this.model.get("columns");
 
     var table = '';
-    for(var i=0; i<rows; i++){
-        table += '<tr>' + 'result ' +  i ;
-        for (var j= 0; j<columns; j++){
-          table += '<td>' + j + '</td>';
-        }
-        table += '</tr>'
-    }
+    var colLabels = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'T', 'U', 'V', 'X', 'Y', 'Z'];
+
+      for(var i= 1; i<rows; i++){
+          table += '<tr>';
+            for (var j= 0; j<columns; j++){
+              table += '<td>' + i +colLabels[j] + '</td>';
+            }
+          table += '</tr>'
+      }
+
 
     var flightsViewTemplate = _.template($('#flightViewTemplate').html());
     this.$el.html(flightsViewTemplate(this.model.toJSON()));
