@@ -51,7 +51,7 @@
           <ul class="nav navbar-nav navbar-right">
             <% if @current_user.present? %>
               <li><%= link_to("My Flights", root_path) %> 
-                  <%= link_to("New Reservation", root_path) %>
+                  <%= link_to("New Flight", root_path) %>
                   <%= link_to("Logout #{@current_user.name}", login_path, :method => :delete) %></li>
               <% else %>
               <li><%= link_to "Sign up", new_user_path  %></li>

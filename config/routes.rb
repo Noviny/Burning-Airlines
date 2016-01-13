@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :users
+  resources :flights
+  resources :airplanes
   root 'pages#home'
   
   get '/user/edit' => 'users#edit'
