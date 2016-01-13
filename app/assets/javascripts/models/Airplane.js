@@ -6,6 +6,6 @@ app.Airplane = Backbone.Model.extend({
   defaults: {
     name: "",
     rows: "",
-    columnes: ""
+    columns: ""
   }
 })
