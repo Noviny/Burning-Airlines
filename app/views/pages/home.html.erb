@@ -36,10 +36,11 @@
     <td id="{{flight_no}}" class="flight_number"><a href="/#flights/{{id}}" >{{ flight_no }}</a></td>
     <td>{{ origin }}</td>
     <td>{{ destination }}</td>
+    <td>{{airplane_id}}</td>
   </tr>
 </script>
 
 <script type="html/template" id="flightViewTemplate">
-  <p>{{ date }} &nbsp; {{flight_no}} &nbsp; {{ origin }} > {{ destination }}</p>
+  <p>{{ date }} &nbsp; {{flight_no}} &nbsp; {{ origin }} > {{ destination }} {{ airplane_id }}</p>
 </script>
 
