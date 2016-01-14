@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   resources :users
-
   resources :flights do
     resources :reservations
   end
-
   resources :airplanes
 
   root 'pages#home'

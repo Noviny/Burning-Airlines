@@ -5,7 +5,6 @@ class ReservationsController < ApplicationController
   # GET /reservations.json
   def index
     @reservations = Reservation.where("flight_id = ?", params[:flight_id]);
-    # @reservations = Reservation.all
   end
 
   # GET /reservations/1

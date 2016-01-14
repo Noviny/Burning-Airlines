@@ -22,6 +22,7 @@ app.FlightView = Backbone.View.extend({
     alert("You are successfully save your seat!");
   },
   render: function () {
+    $('.video-section').remove();
     var rows = this.model.get("rows");
     var columns = this.model.get("columns");
 
