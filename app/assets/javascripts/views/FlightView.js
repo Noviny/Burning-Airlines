@@ -13,12 +13,13 @@ app.FlightView = Backbone.View.extend({
       $('.seat-selected').removeClass('seat-selected');   //Avoid multiple selection
       $(e.target).addClass('seat-selected');
     }
-    console.log($(e.target).text());
+    console.log('Hit seat = ', $(e.target).text());
     $('#seatNumber').val($(e.target).text());
   },
   confirmBooking: function () {
+    console.log("here = ", $('#seatNumber').val());
     var flightId = this.model.get("id");
-    // var userId =                       //*** Remember add current user id
+    var userId = $('#userId').val();
     var seatNum = $('#seatNumber').val();
     var reservation = new app.Reservation();
     reservation.set({ flight_id: flightId, seat: seatNum});   //*** Remember add current user id
@@ -44,22 +45,16 @@ app.FlightView = Backbone.View.extend({
     this.$el.find('#tbl').html(table);
 
     var view = this;
-    setInterval(function () {
+  //  setInterval(function () {
       view.fetchReservationData();
-    }, 1000);
+  //  }, 1000);
   },
   fetchReservationData: function () {
     app.reservation = new app.Reservations();
-    console.log("Reservation = ", app.reservation);
     app.reservation.fetch().done( function (rdata){
       for (var i = 0; i < rdata.length; i++) {
-      //  if (flight.get('id') == rdata.get('flight_id')) {
-          // $('td#'+i.get('seat')).addClass('seat-booked').html();
-      //  }
-        // console.log('flight id = ', flight.get('id'));
-         console.log('R data = ', rdata);
-
-      };
+        $('td#'+rdata[i].seat).addClass('seat-booked').html();
+      }
     });
   }
 });

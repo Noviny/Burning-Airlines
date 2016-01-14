@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  resources :reservations
   resources :users
-  resources :flights
+
+  resources :flights do
+    resources :reservations
+  end
+
   resources :airplanes
+
   root 'pages#home'
-  
+
   get '/user/edit' => 'users#edit'
   resources :users, :except => [:edit]
 
@@ -13,3 +17,6 @@ Rails.application.routes.draw do
   delete '/login' => 'session#destroy'
 
 end
+
+
+
