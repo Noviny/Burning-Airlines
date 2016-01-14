@@ -6,6 +6,5 @@ app.Airplanes = Backbone.Collection.extend({
   url: "/airplanes",
 
   initialize: function () {
-
   }
-})
+});

@@ -3,8 +3,7 @@ var app = app || {};
 app.FlightView = Backbone.View.extend({
   el: '#main',
   events: {
-    'click td': 'bookSeat',
-    'click .save': 'confirmBooking'
+    'click td': 'bookSeat'
   },
   bookSeat: function (e) {
     if ($(e.target).hasClass('seat-booked')) {
@@ -13,17 +12,14 @@ app.FlightView = Backbone.View.extend({
       $('.seat-selected').removeClass('seat-selected');   //Avoid multiple selection
       $(e.target).addClass('seat-selected');
     }
-    console.log('Hit seat = ', $(e.target).text());
+
     $('#seatNumber').val($(e.target).text());
-  },
-  confirmBooking: function () {
-    console.log("here = ", $('#seatNumber').val());
     var flightId = this.model.get("id");
-    var userId = $('#userId').val();
-    var seatNum = $('#seatNumber').val();
     var reservation = new app.Reservation();
-    reservation.set({ flight_id: flightId, seat: seatNum});   //*** Remember add current user id
+    var seatNum = $(e.target).text();
+    reservation.set({ flight_id: flightId, seat: seatNum});   //*** current user id saved at rails
     reservation.save();
+    alert("You are successfully save your seat!");
   },
   render: function () {
     var rows = this.model.get("rows");
@@ -45,9 +41,9 @@ app.FlightView = Backbone.View.extend({
     this.$el.find('#tbl').html(table);
 
     var view = this;
-  //  setInterval(function () {
+    setInterval(function () {
       view.fetchReservationData();
-  //  }, 1000);
+    }, 1000);
   },
   fetchReservationData: function () {
     app.reservation = new app.Reservations();
