@@ -6,12 +6,17 @@
 <div class="dl-horizontal">
   <strong><%= model_class.human_attribute_name(:name) %>:</strong>
   <%= @airplane.name %>
-  <p><strong>Seat: </strong></p>
-  <% i = 0 %>
+  <p><strong>Seat number: </strong></p>
+  <% 
+  colLabels = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'T', 'U', 'V', 'X', 'Y', 'Z'];
+  %>
+
   <% (1..@airplane.rows).each do |row| %>
     <div class="row">
-      <% (1..@airplane.columns).each do |column| %>
-     <div class="col-sm-2">Seat <%= i = i + 1%></div>
+      <% (0..@airplane.columns - 1).each do |column| 
+          col = colLabels[column];
+        %>
+     <div class="col-sm-2"><%= row %><%=col%></div>
     <% end %>
    </div>
   <% end %>
