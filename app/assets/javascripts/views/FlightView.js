@@ -11,18 +11,17 @@ app.FlightView = Backbone.View.extend({
     } else {
       $('.seat-selected').removeClass('seat-selected');   //Avoid multiple selection
       $(e.target).addClass('seat-selected');
+      $('#seatNumber').val($(e.target).text());
+      var flightId = this.model.get("id");
+      var reservation = new app.Reservation();
+      var seatNum = $(e.target).text();
+      reservation.set({ flight_id: flightId, seat: seatNum});   //*** current user id saved at rails
+      reservation.save();
+      alert("You are successfully save your seat!");
     }
 
-    $('#seatNumber').val($(e.target).text());
-    var flightId = this.model.get("id");
-    var reservation = new app.Reservation();
-    var seatNum = $(e.target).text();
-    reservation.set({ flight_id: flightId, seat: seatNum});   //*** current user id saved at rails
-    reservation.save();
-    alert("You are successfully save your seat!");
   },
   render: function () {
-    $('.video-section').remove();
     var rows = this.model.get("rows");
     var columns = this.model.get("columns");
 
