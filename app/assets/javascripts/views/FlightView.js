@@ -25,6 +25,7 @@ app.FlightView = Backbone.View.extend({
     reservation.save();
   },
   render: function () {
+    $('.video-section').remove();
     var rows = this.model.get("rows");
     var columns = this.model.get("columns");
 
