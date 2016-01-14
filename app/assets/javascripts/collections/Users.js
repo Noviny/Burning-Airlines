@@ -1,4 +1,4 @@
-var app = app || {};
+// var app = app || {};
 
 // app.Users = Backbone.Collection.extend({
 //   model: app.User,
@@ -6,6 +6,6 @@ var app = app || {};
 //   url "/users",
 
 //   initialize: function () {
-    
+
 //   }
 // });

@@ -4,8 +4,7 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def index
-    params[:id]
-    @reservations = Reservation.all
+    @reservations = Reservation.where("flight_id = ?", params[:flight_id]);
   end
 
   # GET /reservations/1
@@ -26,6 +25,7 @@ class ReservationsController < ApplicationController
   # POST /reservations.json
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.user_id = @current_user.id
 
     respond_to do |format|
       if @reservation.save
